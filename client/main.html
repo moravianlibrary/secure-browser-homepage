@@ -1,13 +1,50 @@
 <head>
-  <title></title>
+    <title></title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">{{_ "title"}}</span>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{> i18n_buttons}}
+            </ul>
+        </div>
+    </div>
+</nav>
 
-  <a id="web-archiv-tile" class="col-md-offset-1 col-md-2 col-xs-6 tile tile-small"
-     href="http://www.webarchiv.cz/" target="_blank">
-      <div id="web-archiv-image" class="tile-small-image center-block"></div>
-      {{_ "home_webarchiv"}}
-  </a>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-6 hlava">
+            <div class="tile center-block">
+                <div class="tile-content">
+                    <div id="browser-image" class="tile-image center-block">
+                    </div>
+                    <h1>{{_ "dl"}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 hlava">
+            <div class="tile center-block">
+                <div class="tile-content">
+                    <div id="archive-image" class="tile-image center-block">
+                    </div>
+                    <h1>{{_ "archive"}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>

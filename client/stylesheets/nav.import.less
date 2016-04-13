@@ -1,0 +1,60 @@
+.navbar-inverse {
+  background-color: @mzk-dark-gray;
+}
+
+.navbar {
+  min-height: @navbar-height;
+}
+
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar-inverse .navbar-brand {
+  font-size: 40px;
+  color: @mzk-text-gray;
+  padding: 25px 15px;
+  &:hover, &focus {
+    color: @mzk-text-gray;
+  }
+}
+
+@media (max-width: @screen-md-min) {
+  .navbar-inverse .navbar-brand {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .navbar-inverse .navbar-brand {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: @screen-xs-min) {
+  .navbar-inverse .navbar-brand {
+    font-size: 16px;
+  }
+}
+
+.tap-i18n-buttons .btn {
+  background-color: initial;
+  font-weight: bold;
+  border: 0;
+  padding: 25px 15px 5px;
+  outline: none;
+  &:hover, &:active {
+    background-color: initial;
+    outline: none;
+    color: white;
+  }
+}
+
+.tap-i18n-buttons .btn-default {
+  color: @mzk-text-gray;
+}
+
+.tap-i18n-buttons .btn-primary {
+  color: @mzk-text-active;
+  text-decoration: underline;
+}

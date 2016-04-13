@@ -1,0 +1,43 @@
+.hlava {
+  border: 1px solid pink;
+}
+
+.tile {
+  height: 380px;
+  width: 300px;
+  border: 1px solid white;
+}
+
+@media (max-width: @screen-xs-min) {
+  .tile {
+    margin-bottom: 30px;
+  }
+}
+
+.tile-image {
+  width: @tile-image-size;
+  height: @tile-image-size;
+}
+
+.tile-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.browser-image-mixin {
+  margin-bottom: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: @tile-image-size;
+}
+
+#browser-image {
+  .browser-image-mixin;
+  background-image: url("digiMzk.png");
+}
+
+#archive-image {
+  .browser-image-mixin;
+  background-image: url("web-archiv.png");
+}

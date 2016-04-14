@@ -1,16 +1,20 @@
-.hlava {
-  border: 1px solid pink;
+@tile-vertical-gap: 50px;
+@tile-image-size: 120px;
+
+#content {
+  padding-top: @tile-vertical-gap;
 }
 
 .tile {
   height: 380px;
   width: 300px;
-  border: 1px solid white;
+  border-radius: 20px;
+  border: 2px solid @mzk-text-gray;
 }
 
 @media (max-width: @screen-xs-min) {
   .tile {
-    margin-bottom: 30px;
+    margin-bottom: @tile-vertical-gap;
   }
 }
 
@@ -25,19 +29,39 @@
   transform: translateY(-50%);
 }
 
-.browser-image-mixin {
+.browser-image-mixin(@image-url) {
   margin-bottom: 50px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: @tile-image-size;
+  background-image: url(@image-url);
 }
 
-#browser-image {
-  .browser-image-mixin;
-  background-image: url("digiMzk.png");
+#library-image {
+  .browser-image-mixin('digiMzk.png');
 }
 
 #archive-image {
-  .browser-image-mixin;
-  background-image: url("web-archiv.png");
+  .browser-image-mixin('webArchive.png');
 }
+
+.tile-hover(@image-selector, @image-url, @color) {
+  &:hover, &:focus {
+    color: @color;
+    border-color: @color;
+    cursor: pointer;
+    #@{image-selector} {
+      background-image: url(@image-url);
+    }
+  }
+}
+
+#archive-tile {
+  .tile-hover(archive-image, 'webArchiveHover.png', @mzk-text-webarchiv);
+}
+
+#library-tile {
+  .tile-hover(library-image, 'digiMzkHover.png', @mzk-green);
+}
+
+
